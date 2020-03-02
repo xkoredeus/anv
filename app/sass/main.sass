@@ -11,6 +11,7 @@ $tr: transparent
 $gr: #C5A19E
 $black: #282828
 $lblack: #565656
+
 @mixin ct
 	background-position: 50% 50%
 	background-size: contain
@@ -198,7 +199,7 @@ input[type="number"]
 			font-size: 13px
 			min-width: 90px
 			padding: 15px 10px
-	&:hover
+  &:hover
 		border-color: $red
 		span
 			color: #fff
@@ -208,9 +209,9 @@ input[type="number"]
 	position: relative
 	transform: scale(0)
 	svg
-		fill: $red
-		width: 300px
-		height: 90px
+        fill: $red
+        height: 90px
+        width: 300px
 	&__wrp
 		position: fixed
 		width: 100vw
@@ -337,8 +338,8 @@ input[type="number"]
 .form
 	&-select
 		-webkit-appearance: none
-		-moz-appearance: none
-		appearance: none
+        appearance: none
+        -moz-appearance: none
 		background: url('../img/icon__arrow.svg') no-repeat 99% 50%
 	&-check
 		margin-top: 25px
@@ -450,6 +451,7 @@ input[type="number"]
 		margin-bottom: 50px
 		+r(1200)
 			font-size: 30px
+			margin-top: 30px
 			margin-bottom: 25px
 		span
 			position: absolute
@@ -604,108 +606,108 @@ input[type="number"]
 			max-width: 80%
 			height: auto
 .test
-  background-image: url('../img/test__bg.jpg')
-  background-position: 50% 100%
-  background-size: 100%
-  background-repeat: no-repeat
-  &__item
-    line-height: 1.3
-    display: flex
-    flex-direction: column
-    +easeinout
-    &:hover
-      transform: translateY(-5px)
-      .test__item
-        &-ttl,
+	background-image: url('../img/test__bg.jpg')
+	background-position: 50% 100%
+	background-size: 100%
+	background-repeat: no-repeat
+	&__item
+		line-height: 1.3
+		display: flex
+		flex-direction: column
+		+easeinout
+		&:hover
+			transform: translateY(-5px)
+			.test__item
+				&-ttl,
+				&-descr
+                    color: $red
+        		&-icon
+                    path
+                        fill: $red !important
+		&-icon
+			margin-bottom: 15px
+			svg
+				+easeinout
+				+r(1200)
+					path
+						width: 50px
+						height: 50px
+        &-ttl
+            font-family: $ebold
+            font-size: 22px
+            min-height: 55px
+            margin-bottom: 15px
+            display: inline-block
+            +easeinout
+            +r(1200)
+                font-size: 18px
+                min-height: auto
+                margin-bottom: 10px
         &-descr
-          color: $red
-          &-icon
-            path
-            fill: $red !important
-    &-icon
-      margin-bottom: 15px
-      +r(1200)
-        svg
-          width: 50px
-          height: 50px
-      path
-        +easeinout
-    &-ttl
-      font-family: $ebold
-      font-size: 22px
-      min-height: 55px
-      margin-bottom: 15px
-      display: inline-block
-      +easeinout
-      +r(1200)
-        font-size: 18px
-        min-height: auto
-        margin-bottom: 10px
-    &-descr
-      font-family: $ereg
-      font-size: 18px
-      color: $gr
-      +easeinout
-      +r(1200)
-        font-size: 14px
+            font-family: $ereg
+            font-size: 18px
+            color: $gr
+            +easeinout
+            +r(1200)
+                font-size: 14px
 .case
     &__item
-      min-height: 333px
-      display: flex
-      +r(600)
-        min-height: auto
-      &:hover
-        .case__item-logo
-          transform: scale(1.1)
-      &-img
-        padding: 50px 20px
-        flex-basis: 50%
-        display: flex
-        justify-content: center
-        align-items: center
-        +r(600)
-          display: none
-      &-logo
-        max-width: 80%
-        height: auto
-        +easeinout
-      &-info
-        padding: 25px 20px
-        background-color: #fff
-        flex-basis: 50%
-        display: flex
-        flex-direction: column
-        justify-content: space-between
-        align-items: flex-start
-        +r(600)
-          flex-basis: 100%
-      &-ttl
-        font-family: $ebold
-        font-size: 20px
-        color: $black
-        margin-bottom: 20px
-        +r(1200)
-          font-size: 18px
-      &-descr
-        font-family: $ereg
-        font-size: 16px
-        line-height: 1.3
-        color: $lblack
-        margin-bottom: 10px
-      &-link
-        span
-          font-family: $ereg
-          font-size: 18px
-          color: #A17772
-          border-bottom: 1px solid #A17772
-          +easeinout
-        path
-          +easeinout
-        &:hover
-          span
-            color: $red
-          path
-            fill: $red
+		display: flex
+		min-height: 333px
+		+r(600)
+			min-height: auto
+		&:hover
+			.case__item-logo
+				transform: scale(1.1)
+		&-img
+			padding: 50px 20px
+			flex-basis: 50%
+			display: flex
+			justify-content: center
+			align-items: center
+			+r(600)
+				display: none
+		&-logo
+			max-width: 80%
+			height: auto
+			+easeinout
+		&-info
+			padding: 25px 20px
+			background-color: #fff
+			flex-basis: 50%
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			align-items: flex-start
+			+r(600)
+				flex-basis: 100%
+		&-ttl
+			font-family: $ebold
+			font-size: 20px
+			color: $black
+			margin-bottom: 20px
+			+r(1200)
+				font-size: 18px
+		&-descr
+			font-family: $ereg
+			font-size: 16px
+			line-height: 1.3
+			color: $lblack
+			margin-bottom: 10px
+		&-link
+			span
+				font-family: $ereg
+				font-size: 18px
+				color: #A17772
+				border-bottom: 1px solid #A17772
+				+easeinout
+        	path
+          		+easeinout
+        	&:hover
+          		span
+            		color: $red
+          		path
+            		fill: $red
 .feed
 	background-image: url('../img/feed__bg.jpg')
 	+cv
@@ -797,15 +799,12 @@ input[type="number"]
 			font-size: 40px
 			color: #fff
 			margin-bottom: 10px
-			+easeinout
-      +r(600)
-        font-size: 20px
 		&-ttl
 			font-size: 40px
 			color: $gr
 			+easeinout
-      +r(600)
-        font-size: 20px
+			+r(600)
+				font-size: 20px
 		&:hover
 			transform: translateY(-5px)
 			.team__item
@@ -826,5 +825,5 @@ input[type="number"]
 	&__logo
 		&-text
 			font-family: $ereg
-			font-size: 18px
 			max-width: 160px
+			font-size: 18px

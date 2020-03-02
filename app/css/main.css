@@ -281,21 +281,18 @@ input[type="number"] {
   -webkit-transform: translate(-4px, -4px);
       -ms-transform: translate(-4px, -4px);
           transform: translate(-4px, -4px);
+  border-color: #E04242;
 }
 
 @media only screen and (max-width: 600px) {
   .btn span {
     font-size: 13px;
-    min-width: 90px;
-    padding: 15px 10px;
+    font-size-min-width: 90px;
+    font-size-padding: 15px 10px;
   }
 }
 
-.btn:hover {
-  border-color: #E04242;
-}
-
-.btn:hover span {
+.btn span span {
   color: #fff;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
@@ -312,8 +309,8 @@ input[type="number"] {
 
 .preloader svg {
   fill: #E04242;
-  width: 300px;
   height: 90px;
+  width: 300px;
 }
 
 .preloader__wrp {
@@ -538,8 +535,8 @@ input[type="number"] {
 
 .form-select {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  -webkit-appearance-appearance: none;
+  -webkit-appearance--moz-appearance: none;
   background: url("../img/icon__arrow.svg") no-repeat 99% 50%;
 }
 
@@ -738,6 +735,7 @@ input[type="number"] {
 @media only screen and (max-width: 1200px) {
   .section__ttl {
     font-size: 30px;
+    margin-top: 30px;
     margin-bottom: 25px;
   }
 }
@@ -1433,16 +1431,25 @@ input[type="number"] {
   opacity: .9;
 }
 
+.team__item {
+  -webkit-transition: .5s all ease-in-out;
+  -o-transition: .5s all ease-in-out;
+  transition: .5s all ease-in-out;
+}
+
 .team__item-num {
   font-family: "Effra-Bold";
   font-size: 40px;
-  font-size-margin-bottom: 10px;
-  font-size-color: #fff;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 .team__item-ttl {
-  color: #C5A19E;
   font-size: 40px;
+  color: #C5A19E;
+  -webkit-transition: .5s all ease-in-out;
+  -o-transition: .5s all ease-in-out;
+  transition: .5s all ease-in-out;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1481,6 +1488,10 @@ input[type="number"] {
 
 .footer__logo-text {
   font-family: "Effra-Regular";
-  font-size: 18px;
   max-width: 160px;
+  font-size: 18px;
+}
+
+.footer__item {
+  font-size: 15px;
 }
