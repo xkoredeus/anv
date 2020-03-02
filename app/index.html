@@ -10,6 +10,107 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+	<!-- preloader-->
+	<style>
+		.preloader__wrp {
+			position: fixed;
+			width: 100vw;
+			height: 100vh;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 4;
+			background-color: #463333;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-webkit-justify-content: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+		.preloader{
+			display: block;
+			position: relative;
+			width: 125px;
+			height: 125px;
+			border-radius: 50%;
+			border: 4px solid transparent;
+			border-top: 4px solid #fff;
+			-webkit-animation: spin 2s linear infinite;
+			animation: spin 2s linear infinite;
+		}
+
+		.preloader::before,
+		.preloader::after {
+			content: "";
+			position: absolute;
+			border-radius: 50%;
+			border: 4px solid transparent;
+		}
+		.preloader::before {
+			top: 5px;
+			left: 5px;
+			right: 5px;
+			bottom: 5px;
+			border-top-color: #E04242;
+			-webkit-animation: spin 3s linear infinite;
+			animation: spin 3.5s linear infinite;
+		}
+		.preloader::after {
+			top: 15px;
+			left: 15px;
+			right: 15px;
+			bottom: 15px;
+			border-top-color: #A17772;
+			-webkit-animation: spin 1.5s linear infinite;
+			animation: spin 1.75s linear infinite;
+		}
+		-webkit-@keyframes spin {
+			-webkit-from {
+				-webkit-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			-webkit-to {
+				-webkit-transform: rotate(360deg);
+				-ms-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+
+		@-webkit-keyframes spin {
+			from {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+
+		@keyframes spin {
+			from {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+	<div class="preloader__wrp">
+		<div class="preloader"></div>
+	</div>
+	<!-- /preloader-->
 	<div class="layout">
 		<div class="layout__overlay js-layout__overlay"></div>
 		<div class="layout__grid">
@@ -35,10 +136,10 @@
 					<div class="header__menu flex-grow-1">
 						<div class="d-flex justify-content-between align-items-center">
 							<nav class="header__nav">
-								<a class="header__nav-link" href="#">О нас</a>
-								<a class="header__nav-link" href="#">Услуги</a>
-								<a class="header__nav-link" href="#">кейсы</a>
-								<a class="header__nav-link" href="#">контакты</a>
+								<a class="header__nav-link" href="#about">О нас</a>
+								<a class="header__nav-link" href="#test">Услуги</a>
+								<a class="header__nav-link" href="#case">кейсы</a>
+								<a class="header__nav-link" href="#footer">контакты</a>
 							</nav>
 							<div class="header__tel d-flex flex-column">
 								<a href="tel:88002345056" class="header__tel-link">8 800 234-50-56</a>
@@ -206,7 +307,7 @@
 				</section>
 			</div>
 		</div>
-		<section class="test section_inner">
+		<section class="test section_inner" id="test">
 			<div class="container">
 				<div class="row">
 					<div class="offset-xl-6"></div>
@@ -383,7 +484,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="case section_inner">
+		<section class="case section_inner" id="case">
 			<div class="container">
 				<div class="section__ttl"><span>05</span>Наши кейсы</div>
 				<div class="row">
@@ -398,7 +499,7 @@
 									<div class="case__item-ttl">Сервис бронирования студий  Agentstudios</div>
 									<div class="case__item-descr">В рамках проекта реализован полнофункциональный каталог с real time данными из google calendar, а так же партнерская часть, где студии полностью управляют финансами и арендой.</div>
 								</div>
-								<a class="case__item-link d-flex align-items-center" href="#" target="_blank">
+								<a class="case__item-link d-flex align-items-center" href="https://agentstudios.ru/" target="_blank">
 									<span class="mr-2">Agentstudios.ru</span>
 									<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.35 7.25C3.96543 7.25 3.59664 7.40279 3.32471 7.67472C3.05279 7.94664 2.9 8.31544 2.9 8.7V24.65C2.9 25.0346 3.05279 25.4034 3.32471 25.6753C3.59664 25.9472 3.96543 26.1 4.35 26.1H20.3C20.6845 26.1 21.0534 25.9472 21.3253 25.6753C21.5972 25.4034 21.75 25.0346 21.75 24.65V15.95C21.75 15.1492 22.3992 14.5 23.2 14.5C24.0008 14.5 24.65 15.1492 24.65 15.95V24.65C24.65 25.8037 24.1917 26.9101 23.3759 27.7259C22.5601 28.5417 21.4537 29 20.3 29H4.35C3.1963 29 2.08989 28.5417 1.2741 27.7259C0.458321 26.9101 0 25.8037 0 24.65V8.7C0 7.54631 0.45832 6.43989 1.2741 5.6241C2.08989 4.80832 3.19631 4.35 4.35 4.35H13.05C13.8508 4.35 14.5 4.99919 14.5 5.8C14.5 6.60081 13.8508 7.25 13.05 7.25H4.35Z" fill="#C5A19E"/>
@@ -421,7 +522,7 @@
 									<div class="case__item-ttl">Онлайн-каталог сувениров  Suveniroved</div>
 									<div class="case__item-descr">С нанесением» 65 000 товаров обновляются ежечасно из 12 различных источников средствами API/XML. Данные размещены на 2-х серверах для более быстрой работы и устранения накладок в момент пиковых нагрузок. </div>
 								</div>
-								<a class="case__item-link d-flex align-items-center" href="#" target="_blank">
+								<a class="case__item-link d-flex align-items-center" href="https://www.suveniroved.ru/" target="_blank">
 									<span class="mr-2">Suveniroved.ru</span>
 									<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.35 7.25C3.96543 7.25 3.59664 7.40279 3.32471 7.67472C3.05279 7.94664 2.9 8.31544 2.9 8.7V24.65C2.9 25.0346 3.05279 25.4034 3.32471 25.6753C3.59664 25.9472 3.96543 26.1 4.35 26.1H20.3C20.6845 26.1 21.0534 25.9472 21.3253 25.6753C21.5972 25.4034 21.75 25.0346 21.75 24.65V15.95C21.75 15.1492 22.3992 14.5 23.2 14.5C24.0008 14.5 24.65 15.1492 24.65 15.95V24.65C24.65 25.8037 24.1917 26.9101 23.3759 27.7259C22.5601 28.5417 21.4537 29 20.3 29H4.35C3.1963 29 2.08989 28.5417 1.2741 27.7259C0.458321 26.9101 0 25.8037 0 24.65V8.7C0 7.54631 0.45832 6.43989 1.2741 5.6241C2.08989 4.80832 3.19631 4.35 4.35 4.35H13.05C13.8508 4.35 14.5 4.99919 14.5 5.8C14.5 6.60081 13.8508 7.25 13.05 7.25H4.35Z" fill="#C5A19E"/>
@@ -444,7 +545,7 @@
 									<div class="case__item-ttl">Интернет-магазин автозапчастей  Veha</div>
 									<div class="case__item-descr">Большой, постоянно онлайн-обнвляемый каталог товаров. Более 80 веб-сервисов обмена с 1С и Битрикс24.</div>
 								</div>
-								<a class="case__item-link d-flex align-items-center" href="#" target="_blank">
+								<a class="case__item-link d-flex align-items-center" href="https://veha-corp.ru/" target="_blank">
 									<span class="mr-2">Veha-corp.ru</span>
 									<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.35 7.25C3.96543 7.25 3.59664 7.40279 3.32471 7.67472C3.05279 7.94664 2.9 8.31544 2.9 8.7V24.65C2.9 25.0346 3.05279 25.4034 3.32471 25.6753C3.59664 25.9472 3.96543 26.1 4.35 26.1H20.3C20.6845 26.1 21.0534 25.9472 21.3253 25.6753C21.5972 25.4034 21.75 25.0346 21.75 24.65V15.95C21.75 15.1492 22.3992 14.5 23.2 14.5C24.0008 14.5 24.65 15.1492 24.65 15.95V24.65C24.65 25.8037 24.1917 26.9101 23.3759 27.7259C22.5601 28.5417 21.4537 29 20.3 29H4.35C3.1963 29 2.08989 28.5417 1.2741 27.7259C0.458321 26.9101 0 25.8037 0 24.65V8.7C0 7.54631 0.45832 6.43989 1.2741 5.6241C2.08989 4.80832 3.19631 4.35 4.35 4.35H13.05C13.8508 4.35 14.5 4.99919 14.5 5.8C14.5 6.60081 13.8508 7.25 13.05 7.25H4.35Z" fill="#C5A19E"/>
@@ -467,7 +568,7 @@
 									<div class="case__item-ttl">Сервис для таксопарков TaxiBooster</div>
 									<div class="case__item-descr">Позволяет полностью контролировать финансы таксопарка. Позволяет настроить автомаатические выплаты водителям на карты. Интегрируется с данными всех известных агрегаторов такси.</div>
 								</div>
-								<a class="case__item-link d-flex align-items-center" href="#" target="_blank">
+								<a class="case__item-link d-flex align-items-center" href="https://xkoredeus.github.io/taxibooster/app/" target="_blank">
 									<span class="mr-2">Taxibooster.ru</span>
 									<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.35 7.25C3.96543 7.25 3.59664 7.40279 3.32471 7.67472C3.05279 7.94664 2.9 8.31544 2.9 8.7V24.65C2.9 25.0346 3.05279 25.4034 3.32471 25.6753C3.59664 25.9472 3.96543 26.1 4.35 26.1H20.3C20.6845 26.1 21.0534 25.9472 21.3253 25.6753C21.5972 25.4034 21.75 25.0346 21.75 24.65V15.95C21.75 15.1492 22.3992 14.5 23.2 14.5C24.0008 14.5 24.65 15.1492 24.65 15.95V24.65C24.65 25.8037 24.1917 26.9101 23.3759 27.7259C22.5601 28.5417 21.4537 29 20.3 29H4.35C3.1963 29 2.08989 28.5417 1.2741 27.7259C0.458321 26.9101 0 25.8037 0 24.65V8.7C0 7.54631 0.45832 6.43989 1.2741 5.6241C2.08989 4.80832 3.19631 4.35 4.35 4.35H13.05C13.8508 4.35 14.5 4.99919 14.5 5.8C14.5 6.60081 13.8508 7.25 13.05 7.25H4.35Z" fill="#C5A19E"/>
@@ -485,7 +586,7 @@
 		<section class="feed section_inner">
 			<div class="container">
 				<div class="row">
-					<div class="col-xl-5">
+					<div class="col-xl-5 mb-3 mb-xl-0">
 						<div class="feed__left">
 							<div class="section__ttl"><span>06</span>Бесплатная консультация по разработке web&nbsp;-&nbsp;проекта</div>
 							<a class="btn" href="#"><span>Подробная информация о компании</span></a>
@@ -581,11 +682,11 @@
 				</div>
 			</div>
 		</section>
-		<footer class="footer section_inner">
+		<footer class="footer section_inner" id="footer">
 			<div class="container">
 				<div class="section__ttl"><span>08</span>Готовы обсудить ваши задачи сейчас</div>
 				<div class="row align-items-center">
-					<div class="col-sm-8">
+					<div class="col-sm-8 mb-4 mb-sm-0">
 						<div class="d-flex flex-column align-items-start">
 							<div class="footer__item">
 								<div class="footer__item-ttl">Бесплатно по всей России</div>
@@ -656,17 +757,17 @@
 		<div class="menu">
 			<button type="button" class="popup__cross js-menu__close">
 				<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<line x1="0.646447" y1="47.6464" x2="47.6464" y2="0.646445" stroke="#fff"/>
-					<path d="M47.6465 47.6465L0.646484 0.646484" stroke="#fff"/>
+					<line x1="0.646447" y1="47.6464" x2="47.6464" y2="0.646445" stroke="#E04242"/>
+					<path d="M47.6465 47.6465L0.646484 0.646484" stroke="#E04242"/>
 				</svg>
 			</button>
 			<div class="menu__in">
 				<div class="d-flex flex-column align-items-start">
 					<nav class="header__nav d-flex flex-column align-items-start mb-3">
-						<a class="header__nav-link mb-3" href="#">О нас</a>
-						<a class="header__nav-link mb-3" href="#">Услуги</a>
-						<a class="header__nav-link mb-3" href="#">кейсы</a>
-						<a class="header__nav-link mb-3" href="#">контакты</a>
+						<a class="header__nav-link mb-3" href="#about">О нас</a>
+						<a class="header__nav-link mb-3" href="#test">Услуги</a>
+						<a class="header__nav-link mb-3" href="#case">кейсы</a>
+						<a class="header__nav-link mb-3" href="#footer">контакты</a>
 					</nav>
 					<div class="header__tel d-flex flex-column mb-4">
 						<a href="tel:88002345056" class="header__tel-link">8 800 234-50-56</a>

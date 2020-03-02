@@ -281,18 +281,22 @@ input[type="number"] {
   -webkit-transform: translate(-4px, -4px);
       -ms-transform: translate(-4px, -4px);
           transform: translate(-4px, -4px);
-  border-color: #E04242;
 }
 
 @media only screen and (max-width: 600px) {
   .btn span {
     font-size: 13px;
-    font-size-min-width: 90px;
-    font-size-padding: 15px 10px;
+    min-width: 90px;
+    padding: 15px 10px;
   }
 }
 
-.btn span span {
+.btn:hover {
+  color: #fff;
+  border-color: #E04242;
+}
+
+.btn:hover span {
   color: #fff;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
@@ -460,8 +464,8 @@ input[type="number"] {
 @media only screen and (max-width: 1200px) {
   .popup__in {
     max-width: 370px;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -535,8 +539,8 @@ input[type="number"] {
 
 .form-select {
   -webkit-appearance: none;
-  -webkit-appearance-appearance: none;
-  -webkit-appearance--moz-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
   background: url("../img/icon__arrow.svg") no-repeat 99% 50%;
 }
 
@@ -639,10 +643,9 @@ input[type="number"] {
   bottom: 20px;
 }
 
-@media only screen and (max-width: 1285px) {
+@media only screen and (max-width: 1200px) {
   .header__hmb {
     display: block;
-    grid-column: 1/2;
   }
 }
 
@@ -1052,21 +1055,21 @@ input[type="number"] {
 .test {
   background-image: url("../img/test__bg.jpg");
   background-position: 50% 100%;
-  background-size: 100%;
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .test__item {
   line-height: 1.3;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-transition: .5s all ease-in-out;
   -o-transition: .5s all ease-in-out;
   transition: .5s all ease-in-out;
@@ -1078,11 +1081,11 @@ input[type="number"] {
           transform: translateY(-5px);
 }
 
-.test__item:hover .test__item-ttl, .test__item:hover .test__item-descr {
+.test__item:hover > * {
   color: #E04242;
 }
 
-.test__item:hover .test__item-ttl-icon, .test__item:hover .test__item-descr-icon {
+.test__item:hover .test__item-icon path {
   fill: #E04242 !important;
 }
 
@@ -1090,17 +1093,17 @@ input[type="number"] {
   margin-bottom: 15px;
 }
 
-@media only screen and (max-width: 1200px) {
-  .test__item-icon svg {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-.test__item-icon path {
+.test__item-icon svg {
   -webkit-transition: .5s all ease-in-out;
   -o-transition: .5s all ease-in-out;
   transition: .5s all ease-in-out;
+}
+
+@media only screen and (max-width: 1200px) {
+  .test__item-icon svg path {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .test__item-ttl {
@@ -1138,11 +1141,11 @@ input[type="number"] {
 }
 
 .case__item {
-  min-height: 333px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  min-height: 333px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1166,14 +1169,17 @@ input[type="number"] {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1233,6 +1239,7 @@ input[type="number"] {
 @media only screen and (max-width: 1200px) {
   .case__item-ttl {
     font-size: 18px;
+    margin-bottom: 10px;
   }
 }
 
@@ -1456,6 +1463,9 @@ input[type="number"] {
   .team__item-ttl {
     font-size: 20px;
   }
+  .team__item-ttl br {
+    display: none;
+  }
 }
 
 .team__item:hover {
@@ -1486,12 +1496,14 @@ input[type="number"] {
   font-size: 22px;
 }
 
+@media only screen and (max-width: 600px) {
+  .footer__item-descr {
+    font-size: 18px;
+  }
+}
+
 .footer__logo-text {
   font-family: "Effra-Regular";
   max-width: 160px;
   font-size: 18px;
-}
-
-.footer__item {
-  font-size: 15px;
 }

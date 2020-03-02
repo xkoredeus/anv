@@ -1,11 +1,8 @@
-// $(() => {
-    // $(window).on('load', function () {
-    //     $('.preloader__wrp').fadeOut();
-    // });
-    // setTimeout(function () {
-    //     $('.preloader__wrp').fadeOut();
-    // }, 4000);
-// });
+$(() => {
+    $(window).on('load', function () {
+        $('.preloader__wrp').fadeOut();
+    });
+});
 $(() => {
   $('.header__hmb').on('click', function headerHambClick () {
     $('.layout')
@@ -13,8 +10,7 @@ $(() => {
       .removeClass('feed-open');
   });
   $('.js-popup__open').on('click', function popupBtnClick () {
-    $('.layout').addClass('feed-open')
-    $('body').removeClass('menu-open feed-open');
+    $('.layout').addClass('feed-open').removeClass('menu-open');
   });
   $('.js-popup__close').on('click', function popupCloseBtnClick () {
     $('.layout').removeClass('feed-open');
@@ -29,10 +25,9 @@ $(() => {
   $('.header__nav-link').on('click', function headerNavLinkClick (event) {
     event.preventDefault();
     $('.layout').removeClass('menu-open');
-    let id  = $(this).attr('href'),
+    const id  = $(this).attr('href'),
       top = $(id).offset().top;
-    console.log(top);
-    $('body').animate({scrollTop: top - 100}, 800);
+    $('body,html').animate({scrollTop: top}, 900);
   });
 });
 // $(() => {
