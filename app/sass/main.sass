@@ -194,9 +194,14 @@ input[type="number"]
 		border-radius: 3px
 		+easeinout
 		transform: translate(-4px,-4px)
+		+r(600)
+			font-size: 13px
+			min-width: 90px
+			padding: 15px 10px
 	&:hover
 		border-color: $red
 		span
+			color: #fff
 			transform: translate(0,0)
 .preloader
 	display: inline-block
@@ -240,16 +245,41 @@ input[type="number"]
 		transform: translateX(-50%)
 		display: grid
 		grid-template-columns: repeat(4, 1fr)
+		z-index: 1
 		&-item
 			height: 100%
 			border-right: 1px solid #553f3f
 			&:first-child
 				border-left: 1px solid #553f3f
+.menu
+	position: absolute
+	top: 0
+	right: -100%
+	background-color: $dark
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08)
+	padding: 60px 30px
+	min-height: 100vh
+	z-index: 3
+	transition: all 1.5s cubic-bezier(.23,1,.32,1)
+	+r(1200)
+		right: -120%
+		width: 100%
+		min-height: 400px
+		height: 100vh
+		overflow-y: scroll
+		padding: 20px 15px
+	&__in
+		opacity: 0
+		transition: all 2.5s ease
+		+r(1200)
+			max-width: 370px
+			margin-left: auto
+			margin-right: auto
 .popup
 	position: absolute
 	top: 0
 	right: -100%
-	background-color: #fff
+	background-color: $dark
 	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08)
 	padding: 60px 30px
 	min-height: 100vh
@@ -285,95 +315,31 @@ input[type="number"]
 			font-size: 15px
 			color: #686868
 .menu-open
-	.header
+	overflow: hidden
+	height: 100vh
+	.menu
+		right: 0
 		&__in
 			opacity: 1
-			visibility: visible
-		&__hmb
-			background-color: $gr
-			&::before
-				transform: translateX(-50%) rotate(45deg)
-				background-color: $dark
-				top: 24px
-			&::after
-				transform: translateX(-50%) rotate(-45deg)
-				background-color: $dark
-				bottom: 23px
-.filter-open
-	.filter
-		visibility: visible
-		opacity: 1
-	.header
-		&__filter-btn
-			background-color: $gr
-			path
-				fill: $dark !important
 .feed-open
+	overflow: hidden
+	height: 100vh
+	padding-right: 15px
 	+r(1200)
 		padding-right: 0
 	.popup
 		right: 0
 		&__in
 			opacity: 1
-	.grid-layout__overlay
+	.layout__overlay
 		opacity: .9
 		visibility: visible
-.order-open
-	.order
-		opacity: 1
-		visibility: visible
-		transform: translate(-50%,-50%)
-	.grid-layout__overlay
-		opacity: .9
-		visibility: visible
-
-.owl-carousel
-	.owl-nav
-		button
-			&.owl-prev,
-			&.owl-next
-				width: 40px
-				height: 40px
-				position: absolute
-				top: 50%
-				border-radius: 50%
-				padding: 0
-				border: 1px solid $dark
-				background-color: $tr
-				display: flex
-				justify-content: center
-				align-items: center
-				transform: translateY(-50%)
-				+easeinout
-				&.disabled
-					opacity: 0
-					cursor: default
-					&:hover
-						opacity: 0
-						cursor: default
-			&.owl-prev
-				left: -60px
-				svg
-					stroke: $dark
-					transform: translateX(10px)
-					+easeinout
-				&:hover
-					svg
-						transform: translateX(-10px)
-				+r(1200)
-					left: -30px
-			&.owl-next
-				right: -60px
-				svg
-					stroke: $dark
-					transform: translateX(-10px)
-					+easeinout
-				&:hover
-					svg
-						transform: translateX(10px)
-				+r(1200)
-					right: -30px
 .form
+	&-select
+		-webkit-appearance: none
+		-moz-appearance: none
+		appearance: none
+		background: url('../img/icon__arrow.svg') no-repeat 99% 50%
 	&-check
 		margin-top: 25px
 		&__input
@@ -386,44 +352,70 @@ input[type="number"]
 					transform: scale(1)
 					opacity: 1
 		&__text
+			font-size: 16px
 			display: flex
 			align-items: center
 			cursor: pointer
 			&-circle
 				position: relative
-				min-width: 31px
-				max-width: 31px
-				height: 31px
-				border: 1px solid #fff
-				border-radius: 50%
+				min-width: 30px
+				max-width: 30px
+				height: 30px
+				border: 1px solid $gr
+				border-radius: 3px
 				margin-right: 8px
 			&-gal
 				position: absolute
-				stroke: #fff
-				top: 2px
+				top: 7px
 				left: 6px
 				opacity: 0
 				transform: scale(.5)
 				+easeinout
-		&--black
-			.form-check
-				&__text
-					&-circle
-						border-color: #000
-					&-gal
-						stroke: #000
 .header
 	position: relative
 	padding: 30px 0
+	z-index: 2
+	+r(1200)
+		padding: 15px 0
+	&__hmb
+		position: relative
+		display: none
+		width: 50px
+		height: 50px
+		+easeinout
+		&::before,
+		&::after
+			position: absolute
+			content: ''
+			left: 50%
+			transform: translateX(-50%)
+			background-color: #fff
+			width: 30px
+			height: 3px
+			+easeinout
+		&::before
+			top: 20px
+		&::after
+			bottom: 20px
+		+r(1285)
+			display: block
+			grid-column: 1/2
 	&__logo
+		+r(420)
+			svg
+				width: 80px
 		&-text
 			font-family: $ereg
 			font-size: 18px
 			max-width: 160px
+			+r(1200)
+				font-size: 14px
 	&__nav
 		flex-grow: 1
 		display: flex
 		justify-content: center
+		+r(1200)
+			flex-grow: 0
 		&-link
 			font-family: $ebold
 			font-size: 14px
@@ -435,6 +427,20 @@ input[type="number"]
 		margin-right: 30px
 		&-link
 			font-size: 20px
+	+r(1200)
+		&__menu
+			position: fixed
+			width: 100%
+			height: 100%
+			left: 0
+			top: 0
+			background: #473334
+			z-index: 5
+			opacity: 0
+			visibility: hidden
+			& > div
+				height: 100%
+
 .section
 	&__ttl
 		position: relative
@@ -442,37 +448,60 @@ input[type="number"]
 		font-size: 55px
 		line-height: 1.1
 		margin-bottom: 50px
+		+r(1200)
+			font-size: 30px
+			margin-bottom: 25px
 		span
 			position: absolute
 			font-family: $elig
 			color: #644A4A
 			left: -80px
+			+r(1200)
+				top: -30px
+				left: 0
 	&__subttl
 		font-size: 22px
 		color: $gr
 		margin-top: -20px
 		margin-bottom: 45px
+		+r(1200)
+			font-size: 18px
+			margin-bottom: 30px
 	&_inner
 		padding: 70px 0
+		+r(1200)
+			padding: 30px 0
+		& > .container
+			position: relative
+			z-index: 2
 .hero
 	background-image: url('../img/banner__bg.jpg')
 	background-position: 50% 0
 	background-size: 100%
 	background-repeat: no-repeat
 	overflow: hidden
+	& > .container
+		position: relative
+		z-index: 2
 .banner
 	padding: 60px 0
+	+r(1200)
+		padding: 30px 0
 	.section__ttl,
 	&__left,
 	&__center
 		position: relative
-		z-index: 1
+		z-index: 2
 	&__subttl
 		font-size: 22px
 		margin-bottom: 20px
+		+r(1200)
+			font-size: 18px
 	&__list
 		font-family: $ebold
 		font-size: 22px
+		+r(1200)
+			font-size: 18px
 		&-item
 			display: flex
 			flex-direction: column
@@ -483,6 +512,8 @@ input[type="number"]
 	&__descr
 		font-size: 20px
 		color: $gr
+		+r(1200)
+			font-size: 16px
 	&__btn
 		margin-top: 20px
 	&__form
@@ -499,6 +530,9 @@ input[type="number"]
 			padding-top: 13px
 			padding-bottom: 13px
 			border-color: #fff
+			+r(400)
+				font-size: 14px
+				padding-left: 10px
 		&-btn
 			position: absolute
 			right: 0
@@ -507,6 +541,7 @@ input[type="number"]
 		position: absolute
 		top: -390px
 		left: -230px
+		z-index: 1
 		&-wrp
 			position: relative
 .stack
@@ -523,10 +558,15 @@ input[type="number"]
 		display: flex
 		flex-direction: column
 		align-items: center
+		+r(1200)
+			align-items: flex-start
 		&-ttl
 			font-family: $ebold
 			font-size: 22px
 			margin-bottom: 25px
+			+r(1200)
+				font-size: 16px
+				margin-bottom: 10px
 		&-logo
 			width: 170px
 			height: 55px
@@ -540,6 +580,8 @@ input[type="number"]
 				margin-bottom: 18px
 			&:hover
 				background-color: $red
+			+r(1200)
+				width: 120px
 			&-img
 				max-width: 80%
 				height: auto
@@ -554,236 +596,235 @@ input[type="number"]
 		justify-content: center
 		align-items: center
 		+easeinout
+		+r(600)
+			height: 55px
 		&:hover
 			background-color: $red
 		&-img
 			max-width: 80%
 			height: auto
 .test
-    background-image: url('../img/test__bg.jpg')
-    background-position: 50% 100%
-    background-size: 100%
-    background-repeat: no-repeat
-    &__item
-        line-height: 1.3
-        display: flex
-        flex-direction: column
-        +easeinout
-        &:hover
-            transform: translateY(-5px)
-            .test__item
-                &-ttl,
-                &-descr
-                    color: $red
-                &-icon
-                    path
-                        fill: $red !important
-        &-icon
-            margin-bottom: 15px
-            path
-                +easeinout
-        &-ttl
-            font-family: $ebold
-            font-size: 22px
-            min-height: 55px
-            margin-bottom: 15px
-            display: inline-block
-            +easeinout
+  background-image: url('../img/test__bg.jpg')
+  background-position: 50% 100%
+  background-size: 100%
+  background-repeat: no-repeat
+  &__item
+    line-height: 1.3
+    display: flex
+    flex-direction: column
+    +easeinout
+    &:hover
+      transform: translateY(-5px)
+      .test__item
+        &-ttl,
         &-descr
-            font-family: $ereg
-            font-size: 18px
-            color: $gr
-            +easeinout
+          color: $red
+          &-icon
+            path
+            fill: $red !important
+    &-icon
+      margin-bottom: 15px
+      +r(1200)
+        svg
+          width: 50px
+          height: 50px
+      path
+        +easeinout
+    &-ttl
+      font-family: $ebold
+      font-size: 22px
+      min-height: 55px
+      margin-bottom: 15px
+      display: inline-block
+      +easeinout
+      +r(1200)
+        font-size: 18px
+        min-height: auto
+        margin-bottom: 10px
+    &-descr
+      font-family: $ereg
+      font-size: 18px
+      color: $gr
+      +easeinout
+      +r(1200)
+        font-size: 14px
 .case
     &__item
-        min-height: 333px
+      min-height: 333px
+      display: flex
+      +r(600)
+        min-height: auto
+      &:hover
+        .case__item-logo
+          transform: scale(1.1)
+      &-img
+        padding: 50px 20px
+        flex-basis: 50%
         display: flex
+        justify-content: center
+        align-items: center
+        +r(600)
+          display: none
+      &-logo
+        max-width: 80%
+        height: auto
+        +easeinout
+      &-info
+        padding: 25px 20px
+        background-color: #fff
+        flex-basis: 50%
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: flex-start
+        +r(600)
+          flex-basis: 100%
+      &-ttl
+        font-family: $ebold
+        font-size: 20px
+        color: $black
+        margin-bottom: 20px
+        +r(1200)
+          font-size: 18px
+      &-descr
+        font-family: $ereg
+        font-size: 16px
+        line-height: 1.3
+        color: $lblack
+        margin-bottom: 10px
+      &-link
+        span
+          font-family: $ereg
+          font-size: 18px
+          color: #A17772
+          border-bottom: 1px solid #A17772
+          +easeinout
+        path
+          +easeinout
         &:hover
-            .case__item-logo
-                transform: scale(1.1)
-        &-img
-            padding: 50px 20px
-            flex-basis: 50%
-            display: flex
-            justify-content: center
-            align-items: center
-        &-logo
-            max-width: 80%
-            height: auto
-            +easeinout
-        &-info
-            padding: 25px 20px
-            background-color: #fff
-            flex-basis: 50%
-            display: flex
-            flex-direction: column
-            justify-content: space-between
-            align-items: flex-start
-        &-ttl
-            font-family: $ebold
-            font-size: 20px
-            color: $black
-            margin-bottom: 20px
-        &-descr
-            font-family: $ereg
-            font-size: 16px
-            line-height: 1.3
-            color: $lblack
-            margin-bottom: 10px
-        &-link
-            span
-                font-family: $ereg
-                font-size: 18px
-                color: #A17772
-                border-bottom: 1px solid #A17772
-                +easeinout
-            path
-                +easeinout
-            &:hover
-                span
-                    color: $red
-                path
-                    fill: $red
-.service
-	grid-template-rows: minmax(100px, auto) minmax(470px, auto)
-	+r(600)
-		overflow: hidden
-	&__descr
-		color: $dark
-	&__slider
-		grid-column: 1/12
-		.owl-nav
-			button
-				&.owl-prev,
-				&.owl-next
-					border: 1px solid #fff
-				&.owl-prev
-					left: 60px
-					+r(1285)
-						left: 30px
-					+r(600)
-						left: -10px
-					svg
-						stroke: #fff
-				&.owl-next
-					right: 60px
-					+r(1285)
-						right: 30px
-					+r(600)
-						right: -10px
-					svg
-						stroke: #fff
-		&-item
-			position: relative
-			min-height: 470px
-			+cv
-			display: grid
-			grid-template-columns: repeat(11, 1fr)
-			align-content: center
-			&::before
-				+ovl
-				background-color: $red
-				opacity: .7
-	&__form
-		position: relative
-		color: #fff
-		grid-column: 3/span 3
-		max-width: 350px
-		+r(1285)
-			grid-column: 1/12
-			margin-left: auto
-			margin-right: auto
-		&-ttl
-			margin-bottom: 15px
-			+r(1285)
-				text-align: center
-		&-input
-			color: #fff
-			font-size: 16px
-			border-bottom: 1px solid #fff
-			&::placeholder
-				color: #fff !important
-			&:focus
-				color: #fff
-				border-bottom-color: #fff
-		&-btn
-			width: 100%
-			margin-top: 15px
+          span
+            color: $red
+          path
+            fill: $red
 .feed
-	&__price
+	background-image: url('../img/feed__bg.jpg')
+	+cv
+	overflow: hidden
+	&__left
 		position: relative
-		background-color: #000
-		grid-column: span 4
-		background-image: url('../img/feed__price-bg.jpg')
-		+cv
-		display: grid
-		grid-template-columns: repeat(4, 1fr)
-		+r(1285)
-			grid-column: 1/13
-		&::before
-			+ovl
-			background-color: $ldark
-			opacity: .8
-		&-in
-			position: relative
-			grid-column: 2/6
-			padding-top: 90px
-			padding-bottom: 90px
-			+r(1285)
-				grid-column: 1/6
-				padding: 30px
-				text-align: center
-		&-btn
-			min-width: 380px
-			span
-				display: flex
-				justify-content: center
-				align-items: center
-				padding-top: 80px !important
-				padding-bottom: 80px !important
-				+r(1285)
-					padding: 20px 0 !important
-			svg
-				+easeinout
-				path:nth-child(1)
-					stroke: #fff
-					+easeinout
-				fill: #fff
-			&-text
-				font-family: $emed
-				font-size: 28px
-				text-transform: uppercase
-				max-width: 120px
-				margin-left: 20px
-				text-align: left
-			&:hover
-				svg
-					fill: $dark
-					path:nth-child(1)
-						stroke: $dark
-	&__ttl
-		margin-bottom: 15px
-		+r(1285)
-			text-align: center
-	+r(1285)
-		.section__subttl
-			text-align: center
+		z-index: 1
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: flex-start
 	&__form
-		padding-top: 90px
-		padding-bottom: 90px
-		grid-column: span 7
-		display: grid
-		grid-template-columns: repeat(7, 1fr)
-		+r(1285)
-			grid-column: 1/13
-			padding: 30px
-		&-in
-			grid-column: 2/5
-			max-width: 390px
-			margin-left: auto
-			margin-right: auto
-			+r(1285)
-				grid-column: 1/8
-		&-btn
+		position: relative
+		z-index: 1
+		margin-top: 15px
+		&-input
+			margin-bottom: 15px
+		&-select
+			margin-bottom: 15px
+		&-budg
+			font-size: 16px
+			margin-top: 20px
+			margin-bottom: 20px
 			width: 100%
-			margin-top: 15px
+			&-title
+				margin-bottom: 20px
+				span
+					font-family: $ebold
+					font-size: 25px
+					color: $red
+		.ui-slider-horizontal
+			height: 5px
+			.ui-slider-handle
+				top: -8px
+				cursor: pointer
+		.ui-widget.ui-widget-content
+			border-radius: 5px
+			border: 1px solid $dark
+			background: $red
+		.ui-widget-header
+			background: $gr
+		&-slider
+			width: 100%
+		&-handle
+			background: radial-gradient(50% 50% at 50% 50%, #E7E7E7 100%, #C0C0C0 100%, #C0C0C0 100%, #E7E7E7 100%, #C0C0C0 100%, #E7E7E7 100%)
+			box-shadow: 0 1px 0 #A9A9A9, 0 5px 5px rgba(0, 0, 0, 0.25)
+			border-radius: 50%
+			display: flex
+			justify-content: center
+			align-items: center
+			&:focus
+				outline: none
+				span
+					color: $red
+			&.ui-state-active
+				background: $red
+				border: 1px solid $red
+				outline: none
+				span
+					background-color: #fff
+			span
+				position: relative
+				color: $red
+				font-weight: 600
+				width: 7px
+				height: 7px
+				border-radius: 50%
+				background-color: $red
+	&__img
+		position: absolute
+		top: 0
+		right: -14px
+		max-height: 450px
+		&-wrp
+			position: relative
+.team
+	position: relative
+	background-image: url('../img/team__bg.jpg')
+	+cv
+	&::before
+		+ovl
+		background-color: $dark
+		opacity: .9
+	&__item
+		+easeinout
+		&-num
+			font-family: $ebold
+			font-size: 40px
+			color: #fff
+			margin-bottom: 10px
+			+easeinout
+      +r(600)
+        font-size: 20px
+		&-ttl
+			font-size: 40px
+			color: $gr
+			+easeinout
+      +r(600)
+        font-size: 20px
+		&:hover
+			transform: translateY(-5px)
+			.team__item
+				&-num,
+				&-ttl
+					color: $red
+.footer
+	&__item
+		color: #fff
+		&:not(:last-child)
+			margin-bottom: 25px
+		&-ttl
+			font-size: 18px
+			margin-bottom: 6px
+		&-descr
+			font-family: $ebold
+			font-size: 22px
+	&__logo
+		&-text
+			font-family: $ereg
+			font-size: 18px
+			max-width: 160px

@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="layout">
-		<div class="layout__overlay"></div>
+		<div class="layout__overlay js-layout__overlay"></div>
 		<div class="layout__grid">
 			<div class="layout__grid-item"></div>
 			<div class="layout__grid-item"></div>
@@ -21,7 +21,7 @@
 		<div class="hero">
 			<div class="container">
 				<header class="header d-flex align-items-center justify-content-between">
-					<div class="header__logo d-flex align-items-end">
+					<div class="header__logo d-flex align-items-center align-items-xl-end">
 						<svg width="139" height="66" viewBox="0 0 139 66" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M2 63.763L36.1149 18.9717C38.7397 15.5268 41.492 15.103 43.2779 17.9447C49.6798 28.1325 72.2427 63.4661 72.2427 63.4661" stroke="#E04242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 							<path d="M8.24878 63.7745L18.6989 50.2211L53.7746 48.5771" stroke="#E04242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -32,17 +32,22 @@
 						</svg>
 						<div class="header__logo-text">Профессиональная python-команда</div>
 					</div>
-					<nav class="header__nav">
-						<a class="header__nav-link" href="#">О нас</a>
-						<a class="header__nav-link" href="#">Услуги</a>
-						<a class="header__nav-link" href="#">кейсы</a>
-						<a class="header__nav-link" href="#">контакты</a>
-					</nav>
-					<div class="header__tel d-flex flex-column">
-						<a href="tel:88002345056" class="header__tel-link">8 800 234-50-56</a>
-						<span>Бесплатный звонок по РФ</span>
+					<div class="header__menu flex-grow-1">
+						<div class="d-flex justify-content-between align-items-center">
+							<nav class="header__nav">
+								<a class="header__nav-link" href="#">О нас</a>
+								<a class="header__nav-link" href="#">Услуги</a>
+								<a class="header__nav-link" href="#">кейсы</a>
+								<a class="header__nav-link" href="#">контакты</a>
+							</nav>
+							<div class="header__tel d-flex flex-column">
+								<a href="tel:88002345056" class="header__tel-link">8 800 234-50-56</a>
+								<span>Бесплатный звонок по РФ</span>
+							</div>
+							<button class="btn header__btn js-popup__open"><span>Оставить заявку</span></button>
+						</div>
 					</div>
-					<button class="btn header__btn"><span>Оставить заявку</span></button>
+					<button class="header__hmb"></button>
 				</header>
 				<section class="banner">
 					<div class="row">
@@ -80,7 +85,7 @@
 							</div>
 						</div>
 						<div class="col-xl-5">
-							<div class="banner__center">
+							<div class="banner__center mt-3 mt-xl-0">
 								<p class="banner__descr"><strong>ANV</strong> - компания создающая комплексные it-решения для бизнеса.</p>
 								<p class="banner__descr">Мы занимаемся разработкой высоко- технологичных порталов и интегрированных веб-систем, нацеленых на автоматизаци вашего бизнеса</p>
 								<p class="banner__descr">Наша работа - это сочитание консалтинговой экспертизы, технологических компитенций, опыта в облости дизайна и проектирования интерфейчов</p>
@@ -94,7 +99,7 @@
 							</div>
 						</div>
 						<div class="col-xl-4">
-							<div class="banner__image-wrp">
+							<div class="banner__image-wrp d-none d-xl-block">
 								<img class="banner__image" src="img/banner__img.png" alt="laptop">
 							</div>
 						</div>
@@ -103,7 +108,7 @@
 				<section class="stack section_inner">
 					<div class="row">
 						<div class="col-xl-3">
-							<div class="stack__img-wrp">
+							<div class="stack__img-wrp d-none d-xl-block">
 								<img class="stack__img" src="img/stack__decor.png" alt="stack glasses">
 							</div>
 						</div>
@@ -111,51 +116,51 @@
 							<div class="section__ttl"><span>02</span>Мы используем</div>
 							<div class="section__subttl">Мы используем современные инструменты и библиотеки и постоянно изучаем новые технологии</div>
 							<div class="row">
-								<div class="col-xl-4">
+								<div class="col-xl-4 col-6 mb-3 mb-xl-0">
 									<div class="stack__item">
 										<div class="stack__item-ttl">Фреймворки и CMS</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_1.png" alt="stack image">
+											<img src="img/stack__img_1.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_2.png" alt="stack image">
+											<img src="img/stack__img_2.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_3.png" alt="stack image">
+											<img src="img/stack__img_3.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_4.png" alt="stack image">
+											<img src="img/stack__img_4.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 									</div>
 								</div>
-								<div class="col-xl-4">
+								<div class="col-xl-4 col-6 mb-3 mb-xl-0">
 									<div class="stack__item">
 										<div class="stack__item-ttl">Базы данных</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_5.png" alt="stack image">
+											<img src="img/stack__img_5.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_6.png" alt="stack image">
+											<img src="img/stack__img_6.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_7.png" alt="stack image">
+											<img src="img/stack__img_7.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 									</div>
 								</div>
-								<div class="col-xl-4">
+								<div class="col-xl-4 col-6 mb-3 mb-xl-0">
 									<div class="stack__item">
 										<div class="stack__item-ttl">Библиотеки</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_8.png" alt="stack image">
+											<img src="img/stack__img_8.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_9.png" alt="stack image">
+											<img src="img/stack__img_9.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_10.png" alt="stack image">
+											<img src="img/stack__img_10.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 										<div class="stack__item-logo">
-											<img src="img/stack__img_11.png" alt="stack image">
+											<img src="img/stack__img_11.png" class="stack__item-logo-img" alt="stack image">
 										</div>
 									</div>
 								</div>
@@ -167,32 +172,32 @@
 					<div class="section__ttl"><span>03</span>Нам доверяют</div>
 					<div class="section__subttl">За долгие годы мы выстроили крепкие и надежные отношения со множеством клиентов. Нам доверяют ведущие и широко известные компании и организации</div>
 					<div class="row">
-						<div class="col-xl-3 col-sm-4 mb-2 mb-sm-3">
+						<div class="col-xl-3 col-sm-4 col-6 mb-2 mb-sm-3">
 							<div class="trust__item">
 								<img src="img/stack__img_1.png" alt="trust" class="trust__item-img">
 							</div>
 						</div>
-						<div class="col-xl-3 col-sm-4 mb-2 mb-sm-3">
+						<div class="col-xl-3 col-sm-4 col-6 mb-2 mb-sm-3">
 							<div class="trust__item">
 								<img src="img/stack__img_1.png" alt="trust" class="trust__item-img">
 							</div>
 						</div>
-						<div class="col-xl-3 col-sm-4 mb-2 mb-sm-3">
+						<div class="col-xl-3 col-sm-4 col-6 mb-2 mb-sm-3">
 							<div class="trust__item">
 								<img src="img/stack__img_1.png" alt="trust" class="trust__item-img">
 							</div>
 						</div>
-						<div class="col-xl-3 col-sm-4 mb-2 mb-sm-3">
+						<div class="col-xl-3 col-sm-4 col-6 mb-2 mb-sm-3">
 							<div class="trust__item">
 								<img src="img/stack__img_1.png" alt="trust" class="trust__item-img">
 							</div>
 						</div>
-						<div class="col-xl-3 col-sm-4 mb-2 mb-sm-3">
+						<div class="col-xl-3 col-sm-4 col-6 mb-2 mb-sm-3">
 							<div class="trust__item">
 								<img src="img/stack__img_1.png" alt="trust" class="trust__item-img">
 							</div>
 						</div>
-						<div class="col-xl-3 col-sm-4 mb-2 mb-sm-3">
+						<div class="col-xl-3 col-sm-4 col-6 mb-2 mb-sm-3">
 							<div class="trust__item">
 								<img src="img/stack__img_1.png" alt="trust" class="trust__item-img">
 							</div>
@@ -477,44 +482,201 @@
 				</div>
 			</div>
 		</section>
-		<!--feed-->
+		<section class="feed section_inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-5">
+						<div class="feed__left">
+							<div class="section__ttl"><span>06</span>Бесплатная консультация по разработке web&nbsp;-&nbsp;проекта</div>
+							<a class="btn" href="#"><span>Подробная информация о компании</span></a>
+						</div>
+					</div>
+					<div class="col-xl-1 d-none d-xl-block">
+						<div class="feed__img-wrp">
+							<img class="feed__img" src="img/feed__decor.png" alt="pen">
+						</div>
+					</div>
+					<div class="col-xl-6">
+						<form class="feed__form d-flex flex-column align-items-start">
+							<input class="feed__form-input w-100" type="tel" placeholder="Ваш номер телефона" required>
+							<input class="feed__form-input w-100" type="email" placeholder="Ваш E-mail" required>
+							<select class="feed__form-select form-select w-100">
+								<option value="Не выбрано" disabled selected hidden>Требуется услуга</option>
+								<option value="Требуется услуга">Услуга 1</option>
+								<option value="Требуется услуга">Услуга 2</option>
+							</select>
+							<div class="feed__form-budg">
+								<div class="feed__form-budg-title">
+									Бюджет: <span class="ml-2">от <span class="feed__form-slider-val">700000</span> ₽</span>
+								</div>
+								<div class="feed__form-slider js-feed__form-slider w-100">
+									<div class="feed__form-handle ui-slider-handle js-handle_1"><span></span></div>
+								</div>
+							</div>
+							<div class="form-check mb-3 mb-xl-4">
+								<label class="form-check__label">
+									<input type="checkbox" checked required class="form-check__input">
+									<div class="form-check__text">
+										<span class="form-check__text-circle">
+											<svg class="form-check__text-gal" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M1 7L6 12L16.5 1" stroke="#C5A19E" stroke-width="2"/>
+											</svg>
+										</span>
+										<span>Согласен на обработку персональных данных</span>
+									</div>
+								</label>
+							</div>
+							<button class="btn" type="submit"><span>Отправить</span></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="team section_inner">
+			<div class="container">
+				<div class="row">
+					<div class="offset-xl-6"></div>
+					<div class="col-xl-6">
+						<div class="section__ttl"><span>07</span>Наша команда</div>
+						<div class="section__subttl">У нас небольшая дружная команда разработчиков. В ней есть специалисты с большим опытом разработки сложных проектов и молодые талантлевые разработчики</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-xl-3 col-6 mb-3 mb-xl-4">
+						<div class="team__item">
+							<div class="team__item-num">4</div>
+							<div class="team__item-ttl">Front-end developer</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-6 mb-3 mb-xl-4">
+						<div class="team__item">
+							<div class="team__item-num">8</div>
+							<div class="team__item-ttl">Back-end developer</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-6 mb-3 mb-xl-4">
+						<div class="team__item">
+							<div class="team__item-num">2</div>
+							<div class="team__item-ttl">Creative Designer</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-6 mb-3 mb-xl-4">
+						<div class="team__item">
+							<div class="team__item-num">3</div>
+							<div class="team__item-ttl">Project Manager</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-6 mb-3 mb-xl-4">
+						<div class="team__item">
+							<div class="team__item-num">8</div>
+							<div class="team__item-ttl">QA <br> Tester</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-6 mb-3 mb-xl-4">
+						<div class="team__item">
+							<div class="team__item-num">2</div>
+							<div class="team__item-ttl">SEO <br> Engineer</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer section_inner">
+			<div class="container">
+				<div class="section__ttl"><span>08</span>Готовы обсудить ваши задачи сейчас</div>
+				<div class="row align-items-center">
+					<div class="col-sm-8">
+						<div class="d-flex flex-column align-items-start">
+							<div class="footer__item">
+								<div class="footer__item-ttl">Бесплатно по всей России</div>
+								<a class="footer__item-descr" href="tel:88001234567">8 800 123-45-67</a>
+							</div>
+							<div class="footer__item">
+								<div class="footer__item-ttl">Наша электронная почта</div>
+								<a class="footer__item-descr" href="mailto:marketing@anv.com">marketing@anv.com</a>
+							</div>
+							<div class="footer__item">
+								<div class="footer__item-ttl">Адрес</div>
+								<a class="footer__item-descr" href="tel:88001234567">Москва, 2-й Хорошевский пр., 9 корп. 1
+									<br> Иваново, Свободная ул., 2А, стр. 1</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="footer__logo d-flex justify-content-sm-end align-items-end">
+							<svg width="139" height="66" viewBox="0 0 139 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M2 63.763L36.1149 18.9717C38.7397 15.5268 41.492 15.103 43.2779 17.9447C49.6798 28.1325 72.2427 63.4661 72.2427 63.4661" stroke="#E04242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M8.24878 63.7745L18.6989 50.2211L53.7746 48.5771" stroke="#E04242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M14.4155 63.7839L20.941 55.1986" stroke="#E04242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M22 45.5771L38.5255 23.5771" stroke="#E04242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M50.8459 20.3338C50.7277 19.8524 65.5481 44.1168 75.8375 60.1804C78.2158 63.8913 81.7638 63.9511 85.0567 60.2431L136.775 2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M58.2821 23.4436L78.9661 55.8872" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<div class="footer__logo-text">Профессиональная python-команда</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--popup-->
 		<div class="popup">
 			<button type="button" class="popup__cross js-popup__close">
 				<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<line x1="0.646447" y1="47.6464" x2="47.6464" y2="0.646445" stroke="black"/>
-					<path d="M47.6465 47.6465L0.646484 0.646484" stroke="black"/>
+					<line x1="0.646447" y1="47.6464" x2="47.6464" y2="0.646445" stroke="#E04242"/>
+					<path d="M47.6465 47.6465L0.646484 0.646484" stroke="#E04242"/>
 				</svg>
 			</button>
 			<div class="popup__in">
-				<form class="popup__form">
-					<div class="popup__ttl section__ttl">Забронируйте комплект</div>
-					<div class="section__subttl">Напишите нам и мы с удовольствием Вам&nbsp;ответим!</div>
-					<div class="form-group form-group--black">
-						<label class="form-label">Ваше имя:</label>
-						<input class="form-input" type="text">
+				<form class="popup__form mt-xl-3">
+					<div class="d-flex flex-column align-items-start">
+						<div class="popup__ttl section__ttl">Заполните форму</div>
+						<input class="form-input mb-2 w-100" type="text" placeholder="Ваше имя">
+						<input class="form-input mb-4 w-100" type="tel" placeholder="Ваш номер телефона">
+
+						<button class="feed__form-btn btn btn--blue" type="submit"><span>Оставить заявку</span></button>
 					</div>
-					<div class="form-group form-group--black">
-						<label class="form-label">Ваше телефон:</label>
-						<input class="form-input" type="tel" placeholder="+7 (---) ---_--_--">
-					</div>
-					<button class="feed__form-btn btn btn--blue" type="submit"><span>Оставить заявку</span></button>
-					<div class="form-check form-check--black">
+					<div class="form-check mb-3 mb-xl-4">
 						<label class="form-check__label">
 							<input type="checkbox" checked required class="form-check__input">
 							<div class="form-check__text">
-							<span class="form-check__text-circle">
-								<svg class="form-check__text-gal" width="28" height="23" fill="none" viewBox="0 0 28 23" xmlns="http://www.w3.org/2000/svg">
-									<path d="M1 15.5385L7.11765 22L27 1"/>
-								</svg>
-							</span>
-								<span>Нажимая на кнопку <span class="b">Оставить заявку</span>, Вы соглашаетесь с политикой конфиденциальности</span>
+								<span class="form-check__text-circle">
+									<svg class="form-check__text-gal" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M1 7L6 12L16.5 1" stroke="#C5A19E" stroke-width="2"/>
+									</svg>
+								</span>
+								<span>Согласен на обработку персональных данных</span>
 							</div>
 						</label>
 					</div>
 				</form>
 			</div>
 		</div>
-		<!--/feed-->
+		<!--/popup-->
+		<!--menu-->
+		<div class="menu">
+			<button type="button" class="popup__cross js-menu__close">
+				<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<line x1="0.646447" y1="47.6464" x2="47.6464" y2="0.646445" stroke="#fff"/>
+					<path d="M47.6465 47.6465L0.646484 0.646484" stroke="#fff"/>
+				</svg>
+			</button>
+			<div class="menu__in">
+				<div class="d-flex flex-column align-items-start">
+					<nav class="header__nav d-flex flex-column align-items-start mb-3">
+						<a class="header__nav-link mb-3" href="#">О нас</a>
+						<a class="header__nav-link mb-3" href="#">Услуги</a>
+						<a class="header__nav-link mb-3" href="#">кейсы</a>
+						<a class="header__nav-link mb-3" href="#">контакты</a>
+					</nav>
+					<div class="header__tel d-flex flex-column mb-4">
+						<a href="tel:88002345056" class="header__tel-link">8 800 234-50-56</a>
+						<span>Бесплатный звонок по РФ</span>
+					</div>
+					<button class="btn header__btn js-popup__open"><span>Оставить заявку</span></button>
+				</div>
+			</div>
+		</div>
+		<!--/menu-->
 	</div>
 	<script src="js/libs.min.js"></script>
 <!--	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>-->
