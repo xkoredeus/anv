@@ -12,6 +12,18 @@
 <body>
 	<!-- preloader-->
 	<style>
+		.preloader{
+			display: block;
+			position: relative;
+			width: 125px;
+			height: 125px;
+			border-radius: 50%;
+			border: 4px solid transparent;
+			border-top: 4px solid #fff;
+			-webkit-animation: spin 2s linear infinite;
+			animation: spin 2s linear infinite;
+			z-index: 6;
+		}
 		.preloader__wrp {
 			position: fixed;
 			width: 100vw;
@@ -34,17 +46,6 @@
 			-webkit-align-items: center;
 			-ms-flex-align: center;
 			align-items: center;
-		}
-		.preloader{
-			display: block;
-			position: relative;
-			width: 125px;
-			height: 125px;
-			border-radius: 50%;
-			border: 4px solid transparent;
-			border-top: 4px solid #fff;
-			-webkit-animation: spin 2s linear infinite;
-			animation: spin 2s linear infinite;
 		}
 
 		.preloader::before,
@@ -114,10 +115,18 @@
 	<div class="layout">
 		<div class="layout__overlay js-layout__overlay"></div>
 		<div class="layout__grid">
-			<div class="layout__grid-item"></div>
-			<div class="layout__grid-item"></div>
-			<div class="layout__grid-item"></div>
-			<div class="layout__grid-item"></div>
+			<div class="layout__grid-item">
+				<div class="layout__grid-item-in"></div>
+			</div>
+			<div class="layout__grid-item">
+				<div class="layout__grid-item-in"></div>
+			</div>
+			<div class="layout__grid-item">
+				<div class="layout__grid-item-in"></div>
+			</div>
+			<div class="layout__grid-item">
+				<div class="layout__grid-item-in"></div>
+			</div>
 		</div>
 		<div class="hero">
 			<div class="container">
@@ -153,7 +162,7 @@
 				<section class="banner">
 					<div class="row">
 						<div class="col-xl-6">
-							<div class="section__ttl"><span>01</span>Highload - проекты на python/django</div>
+							<div class="banner__ttl section__ttl"><span>01</span>Highload - проекты на python/django</div>
 						</div>
 					</div>
 					<div class="row">
@@ -191,7 +200,7 @@
 								<p class="banner__descr">Мы занимаемся разработкой высоко- технологичных порталов и интегрированных веб-систем, нацеленых на автоматизаци вашего бизнеса</p>
 								<p class="banner__descr">Наша работа - это сочитание консалтинговой экспертизы, технологических компитенций, опыта в облости дизайна и проектирования интерфейчов</p>
 								<form class="banner__form">
-									<div class="banner__form-ttl">Бесплатная онсультация по проекту</div>
+									<div class="banner__form-ttl">Бесплатная консультация по проекту</div>
 									<div class="banner__form-in">
 										<input class="banner__form-input" type="tel" placeholder="Ваш номер телефона">
 										<button class="btn banner__form-btn" type="submit"><span>Поставить задачу</span></button>
@@ -214,8 +223,8 @@
 							</div>
 						</div>
 						<div class="col-xl-9">
-							<div class="section__ttl"><span>02</span>Мы используем</div>
-							<div class="section__subttl">Мы используем современные инструменты и библиотеки и постоянно изучаем новые технологии</div>
+							<div class="stack__ttl section__ttl"><span>02</span>Мы используем</div>
+							<div class="stack__subttl section__subttl">Мы используем современные инструменты и библиотеки и постоянно изучаем новые технологии</div>
 							<div class="row">
 								<div class="col-xl-4 col-6 mb-3 mb-xl-0">
 									<div class="stack__item">
@@ -270,8 +279,8 @@
 					</div>
 				</section>
 				<section class="trust section_inner">
-					<div class="section__ttl"><span>03</span>Нам доверяют</div>
-					<div class="section__subttl">За долгие годы мы выстроили крепкие и надежные отношения со множеством клиентов. Нам доверяют ведущие и широко известные компании и организации</div>
+					<div class="trust__ttl section__ttl"><span>03</span>Нам доверяют</div>
+					<div class="trust__subttl section__subttl">За долгие годы мы выстроили крепкие и надежные отношения со множеством клиентов. Нам доверяют ведущие и широко известные компании и организации</div>
 					<div class="row">
 						<div class="col-xl-3 col-sm-4 col-6 mb-2 mb-sm-3">
 							<div class="trust__item">
@@ -312,7 +321,7 @@
 				<div class="row">
 					<div class="offset-xl-6"></div>
 					<div class="col-xl-6">
-						<div class="section__ttl"><span>04</span>Что мы умеем?</div>
+						<div class="test__ttl section__ttl"><span>04</span>Что мы умеем?</div>
 					</div>
 				</div>
 				<div class="row align-items-baseline">
@@ -486,7 +495,7 @@
 		</section>
 		<section class="case section_inner" id="case">
 			<div class="container">
-				<div class="section__ttl"><span>05</span>Наши кейсы</div>
+				<div class="case__ttl section__ttl"><span>05</span>Наши кейсы</div>
 				<div class="row">
 					<!--item-->
 					<div class="col-xl-6 mb-3 mb-xl-4">
@@ -588,8 +597,8 @@
 				<div class="row">
 					<div class="col-xl-5 mb-3 mb-xl-0">
 						<div class="feed__left">
-							<div class="section__ttl"><span>06</span>Бесплатная консультация по разработке web&nbsp;-&nbsp;проекта</div>
-							<a class="btn" href="#"><span>Подробная информация о компании</span></a>
+							<div class="feed__ttl section__ttl"><span>06</span>Бесплатная консультация по разработке web&nbsp;-&nbsp;проекта</div>
+							<a class="feed__btn btn" href="#"><span>Подробная информация о компании</span></a>
 						</div>
 					</div>
 					<div class="col-xl-1 d-none d-xl-block">
@@ -634,12 +643,14 @@
 			</div>
 		</section>
 		<section class="team section_inner">
+			<div class="team__bg"></div>
+			<div class="team__overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="offset-xl-6"></div>
 					<div class="col-xl-6">
-						<div class="section__ttl"><span>07</span>Наша команда</div>
-						<div class="section__subttl">У нас небольшая дружная команда разработчиков. В ней есть специалисты с большим опытом разработки сложных проектов и молодые талантлевые разработчики</div>
+						<div class="team__ttl section__ttl"><span>07</span>Наша команда</div>
+						<div class="team__subttl section__subttl">У нас небольшая дружная команда разработчиков. В ней есть специалисты с большим опытом разработки сложных проектов и молодые талантлевые разработчики</div>
 					</div>
 				</div>
 				<div class="row justify-content-center">
@@ -684,7 +695,7 @@
 		</section>
 		<footer class="footer section_inner" id="footer">
 			<div class="container">
-				<div class="section__ttl"><span>08</span>Готовы обсудить ваши задачи сейчас</div>
+				<div class="footer__ttl section__ttl"><span>08</span>Готовы обсудить ваши задачи сейчас</div>
 				<div class="row align-items-center">
 					<div class="col-sm-8 mb-4 mb-sm-0">
 						<div class="d-flex flex-column align-items-start">
@@ -780,13 +791,13 @@
 		<!--/menu-->
 	</div>
 	<script src="js/libs.min.js"></script>
-<!--	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>-->
-<!--	<script src="https://api-maps.yandex.ru/2.1/?apikey=078a27eb-0b91-4b81-8ea4-d202061ff355&lang=ru_RU"></script>-->
-<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>-->
-<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>-->
-<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>-->
-<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>-->
-<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>-->
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=078a27eb-0b91-4b81-8ea4-d202061ff355&lang=ru_RU"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 	<script src="js/scripts.js"></script>
 
 </body>

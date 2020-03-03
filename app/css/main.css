@@ -1093,7 +1093,7 @@ input[type="number"] {
   margin-bottom: 15px;
 }
 
-.test__item-icon svg {
+.test__item-icon svg path {
   -webkit-transition: .5s all ease-in-out;
   -o-transition: .5s all ease-in-out;
   transition: .5s all ease-in-out;
@@ -1408,6 +1408,12 @@ input[type="number"] {
   background-color: #E04242;
 }
 
+.feed__btn {
+  -webkit-transition: unset;
+  -o-transition: unset;
+  transition: unset;
+}
+
 .feed__img {
   position: absolute;
   top: 0;
@@ -1421,13 +1427,22 @@ input[type="number"] {
 
 .team {
   position: relative;
+}
+
+.team__bg {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   background-image: url("../img/team__bg.jpg");
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.team::before {
+.team__overlay {
   content: '';
   position: absolute;
   width: 100%;
@@ -1449,6 +1464,9 @@ input[type="number"] {
   font-size: 40px;
   color: #fff;
   margin-bottom: 10px;
+  -webkit-transition: .5s all ease-in-out;
+  -o-transition: .5s all ease-in-out;
+  transition: .5s all ease-in-out;
 }
 
 .team__item-ttl {

@@ -626,9 +626,10 @@ input[type="number"]
 		&-icon
 			margin-bottom: 15px
 			svg
-				@include easeinout
-				@include r(1200)
-					path
+				path
+					@include easeinout
+
+					@include r(1200)
 						width: 50px
 						height: 50px
 		&-ttl
@@ -778,6 +779,8 @@ input[type="number"]
 				height: 7px
 				border-radius: 50%
 				background-color: $red
+	&__btn
+		transition: unset
 	&__img
 		position: absolute
 		top: 0
@@ -787,9 +790,11 @@ input[type="number"]
 			position: relative
 .team
 	position: relative
-	background-image: url('../img/team__bg.jpg')
-	@include cv
-	&::before
+	&__bg
+		+ovl
+		background-image: url('../img/team__bg.jpg')
+		@include cv
+	&__overlay
 		+ovl
 		background-color: $dark
 		opacity: .9
@@ -800,6 +805,7 @@ input[type="number"]
 			font-size: 40px
 			color: #fff
 			margin-bottom: 10px
+			@include easeinout
 		&-ttl
 			font-size: 40px
 			color: $gr
