@@ -14,7 +14,7 @@ $(() => {
     tl4p2 = new TimelineMax()
   const controller = new ScrollMagic.Controller();
   tl1p1
-    .fromTo('.layout__grid', 1, {top:-100}, {top:100}, 0.2)
+    .fromTo('.layout__grid', 1, {top:-2000}, {top:0}, 0.2)
     .staggerFromTo('.header', .8, {opacity: 0}, {opacity:1}, 0.3)
     // .staggerFromTo('.header__nav-link', .2, {x:30,opacity:0}, {x:0,opacity: 1}, 0.1)
     .staggerFromTo('.banner__ttl', 1.2, {x:-30,opacity:0}, {x:0,opacity:1}, 0.6)
